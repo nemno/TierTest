@@ -4,6 +4,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 final class MapModule: Module {
     var coordinator: Coordinator
@@ -29,7 +30,6 @@ final class MapModule: Module {
     // MARK: - Private helper methods
     
     private func start() {
-        getCurrentLocation()
         getScooters()
     }
     
@@ -42,19 +42,36 @@ final class MapModule: Module {
             if let response = response {
                 let viewModels = self.APIToUIMapper.map(apiModels: response.data.current)
                 self.didFetch(scooters: viewModels)
+                self.getCurrentLocationForNearestScooter(scooters: viewModels)
             } else {
                 // TODO: Handle error
             }
         }
     }
     
-    private func getCurrentLocation() {
-        self.locationProvider.getCurrentLocation { (currentLocation, error) in
+    private func getCurrentLocationForNearestScooter(scooters: [ScooterViewModel]) {
+        self.locationProvider.getCurrentLocation { [weak self] (currentLocation, error) in
+            if let location = currentLocation {
+                var sortedScooters = scooters
+                sortedScooters.sort { (left, right) -> Bool in
+                    return location.distance(from: CLLocation(latitude: left.annotation.coordinate.latitude, longitude: left.annotation.coordinate.latitude)) < location.distance(from: CLLocation(latitude: right.annotation.coordinate.latitude, longitude: right.annotation.coordinate.latitude))
+                }
+                
+                if let nearestScooter = sortedScooters.first {
+                    self?.didFindNearestScooter(scooter: nearestScooter)
+                }
+            } else {
+                // TODO: Handle error
+            }
         }
     }
     
     private func didFetch(scooters: [ScooterViewModel]) {
         guard let mapViewController = self.rootViewController as? MapViewController else { return }
         mapViewController.setScooters(scooters)
+    }
+    
+    private func didFindNearestScooter(scooter: ScooterViewModel) {
+        
     }
 }
