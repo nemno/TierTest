@@ -16,13 +16,17 @@ final class MapModule: Module {
     }()
     
     private let locationProvider: LocationProvider
+    private let APIToUIMapper: ScootersAPIToUIMapper
     
-    init(coordinator: Coordinator, dataService: DataService, locationProvider: LocationProvider, didFinishModuleFlow: @escaping (() -> Void)) {
+    init(coordinator: Coordinator, dataService: DataService, locationProvider: LocationProvider, APIToUIMapper: ScootersAPIToUIMapper, didFinishModuleFlow: @escaping (() -> Void)) {
         self.coordinator = coordinator
         self.dataService = dataService
         self.didFinishModuleFlow = didFinishModuleFlow
         self.locationProvider = locationProvider
+        self.APIToUIMapper = APIToUIMapper
     }
+    
+    // MARK: - Private helper methods
     
     private func start() {
         getCurrentLocation()
@@ -32,14 +36,25 @@ final class MapModule: Module {
     private func getScooters() {
         guard let mapDataService = self.dataService as? MapDataService else { return }
         
-        mapDataService.getScooters { (response, error) in
+        mapDataService.getScooters { [weak self] (response, error) in
+            guard let self = self else { return }
             
+            if let response = response {
+                let viewModels = self.APIToUIMapper.map(apiModels: response.data.current)
+                self.didFetch(scooters: viewModels)
+            } else {
+                // TODO: Handle error
+            }
         }
     }
     
     private func getCurrentLocation() {
         self.locationProvider.getCurrentLocation { (currentLocation, error) in
-            // TODO: Handle current location based on feature requirement
         }
+    }
+    
+    private func didFetch(scooters: [ScooterViewModel]) {
+        guard let mapViewController = self.rootViewController as? MapViewController else { return }
+        mapViewController.setScooters(scooters)
     }
 }

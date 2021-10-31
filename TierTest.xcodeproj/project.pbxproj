@@ -30,6 +30,10 @@
 		5AB91EDC272E8B0D00E3C20D /* SccoterAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB91EDB272E8B0D00E3C20D /* SccoterAPIModel.swift */; };
 		5AB91EE1272E983D00E3C20D /* ScootersAPIToUIMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB91EE0272E983D00E3C20D /* ScootersAPIToUIMapper.swift */; };
 		5AB91F0A272EA2E600E3C20D /* LocationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB91F09272EA2E500E3C20D /* LocationProvider.swift */; };
+		5AB91F15272F2B0000E3C20D /* ScooterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB91F14272F2B0000E3C20D /* ScooterViewModel.swift */; };
+		5AB91F1A272F313100E3C20D /* ScooterAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB91F19272F313100E3C20D /* ScooterAnnotation.swift */; };
+		5AB91F1F272F38D000E3C20D /* ScooterClusterAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB91F1E272F38D000E3C20D /* ScooterClusterAnnotationView.swift */; };
+		5AB91F24272F3B4100E3C20D /* ScooterAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB91F23272F3B4100E3C20D /* ScooterAnnotationView.swift */; };
 		B3BF783196FBA3E03DC75829 /* Pods_TierTest_TierTestUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4594DB6660BF92C1E7F442CC /* Pods_TierTest_TierTestUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -80,6 +84,10 @@
 		5AB91EDB272E8B0D00E3C20D /* SccoterAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SccoterAPIModel.swift; sourceTree = "<group>"; };
 		5AB91EE0272E983D00E3C20D /* ScootersAPIToUIMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScootersAPIToUIMapper.swift; sourceTree = "<group>"; };
 		5AB91F09272EA2E500E3C20D /* LocationProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationProvider.swift; sourceTree = "<group>"; };
+		5AB91F14272F2B0000E3C20D /* ScooterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScooterViewModel.swift; sourceTree = "<group>"; };
+		5AB91F19272F313100E3C20D /* ScooterAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScooterAnnotation.swift; sourceTree = "<group>"; };
+		5AB91F1E272F38D000E3C20D /* ScooterClusterAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScooterClusterAnnotationView.swift; sourceTree = "<group>"; };
+		5AB91F23272F3B4100E3C20D /* ScooterAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScooterAnnotationView.swift; sourceTree = "<group>"; };
 		7800C3386A6CE58318D9E146 /* Pods_TierTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TierTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AF16E1A0192DE654940C921 /* Pods-TierTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TierTest.debug.xcconfig"; path = "Target Support Files/Pods-TierTest/Pods-TierTest.debug.xcconfig"; sourceTree = "<group>"; };
 		813A9D2A2A0393504FC8EF42 /* Pods-TierTest-TierTestUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TierTest-TierTestUITests.release.xcconfig"; path = "Target Support Files/Pods-TierTest-TierTestUITests/Pods-TierTest-TierTestUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -238,6 +246,7 @@
 		5AB91EAB272DD2C600E3C20D /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				5AB91F28272F3FA700E3C20D /* Components */,
 				5AB91EB5272DD35200E3C20D /* MapViewController.swift */,
 			);
 			path = UI;
@@ -249,8 +258,19 @@
 				5AB91EBD272DD47A00E3C20D /* MapDataService.swift */,
 				5AB91EDB272E8B0D00E3C20D /* SccoterAPIModel.swift */,
 				5AB91EE0272E983D00E3C20D /* ScootersAPIToUIMapper.swift */,
+				5AB91F14272F2B0000E3C20D /* ScooterViewModel.swift */,
+				5AB91F19272F313100E3C20D /* ScooterAnnotation.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		5AB91F28272F3FA700E3C20D /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				5AB91F1E272F38D000E3C20D /* ScooterClusterAnnotationView.swift */,
+				5AB91F23272F3B4100E3C20D /* ScooterAnnotationView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		9EC07BC6B4E544772C5ECE9C /* Frameworks */ = {
@@ -503,9 +523,12 @@
 			files = (
 				5AB91EC6272DD6EF00E3C20D /* ConfigProvider.swift in Sources */,
 				5AB91ECE272DD8F000E3C20D /* TierError.swift in Sources */,
+				5AB91F15272F2B0000E3C20D /* ScooterViewModel.swift in Sources */,
 				5AB91EE1272E983D00E3C20D /* ScootersAPIToUIMapper.swift in Sources */,
 				5AB91EDC272E8B0D00E3C20D /* SccoterAPIModel.swift in Sources */,
 				5AB91EB6272DD35200E3C20D /* MapViewController.swift in Sources */,
+				5AB91F1F272F38D000E3C20D /* ScooterClusterAnnotationView.swift in Sources */,
+				5AB91F24272F3B4100E3C20D /* ScooterAnnotationView.swift in Sources */,
 				5AB91F0A272EA2E600E3C20D /* LocationProvider.swift in Sources */,
 				5AB91E9A272DD0B900E3C20D /* DefaultConfigProvider.swift in Sources */,
 				5AB91E9C272DD0B900E3C20D /* APICommunicator.swift in Sources */,
@@ -516,6 +539,7 @@
 				5AB91E4C272DCC6200E3C20D /* AppDelegate.swift in Sources */,
 				5AB91EBE272DD47A00E3C20D /* MapDataService.swift in Sources */,
 				5AB91E97272DD0B900E3C20D /* Constants.swift in Sources */,
+				5AB91F1A272F313100E3C20D /* ScooterAnnotation.swift in Sources */,
 				5AB91E98272DD0B900E3C20D /* DataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

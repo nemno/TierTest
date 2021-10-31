@@ -22,6 +22,10 @@ final class ApplicationAssembler {
         return DefaultLocationProvider()
     }()
     
+    lazy var scooterAPIToUIMapper: ScootersAPIToUIMapper = {
+        return ScootersAPIToUIMapper()
+    }()
+    
     private func createApplicationCoordinator() -> ApplicationCoordinator {
         let navigationController = UINavigationController()
         return ApplicationCoordinator(rootViewController: navigationController)
@@ -35,7 +39,7 @@ final class ApplicationAssembler {
     // MARK: - Module creation methods
     private func createMapModule() -> Module {
         let mapDataService = MapDataService(apiCommunicator: self.APICommunicator)
-        return MapModule(coordinator: self.applicationCoordinator, dataService: mapDataService, locationProvider: self.locationProvider, didFinishModuleFlow: { [weak self] in
+        return MapModule(coordinator: self.applicationCoordinator, dataService: mapDataService, locationProvider: self.locationProvider, APIToUIMapper: self.scooterAPIToUIMapper, didFinishModuleFlow: { [weak self] in
             self?.applicationCoordinator.popModule()
         })
     }
