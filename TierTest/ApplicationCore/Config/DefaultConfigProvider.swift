@@ -1,6 +1,6 @@
 //
 //  ConfigProvider.swift
-//  KHTest
+//  TierTest
 //
 
 import UIKit

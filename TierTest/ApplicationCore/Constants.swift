@@ -1,6 +1,6 @@
 //
 //  Constants.swift
-//  KHTest
+//  TierTest
 //
 
 import Foundation

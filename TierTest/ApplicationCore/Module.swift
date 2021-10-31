@@ -1,6 +1,6 @@
 //
 //  Module.swift
-//  KHTest
+//  TierTest
 //
 
 import UIKit

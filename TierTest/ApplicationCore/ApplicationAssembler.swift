@@ -1,6 +1,6 @@
 //
 //  ApplicationFacade.swift
-//  KHTest
+//  TierTest
 //
 
 import UIKit
@@ -18,6 +18,10 @@ final class ApplicationAssembler {
         return DefaultAPICommunicator(APIURL: self.configProvider.APIURL(), APIKey: self.configProvider.APIKey())
     }()
 
+    lazy var locationProvider: LocationProvider = {
+        return DefaultLocationProvider()
+    }()
+    
     private func createApplicationCoordinator() -> ApplicationCoordinator {
         let navigationController = UINavigationController()
         return ApplicationCoordinator(rootViewController: navigationController)
@@ -31,7 +35,7 @@ final class ApplicationAssembler {
     // MARK: - Module creation methods
     private func createMapModule() -> Module {
         let mapDataService = MapDataService(apiCommunicator: self.APICommunicator)
-        return MapModule(coordinator: self.applicationCoordinator, dataService: mapDataService, didFinishModuleFlow: { [weak self] in
+        return MapModule(coordinator: self.applicationCoordinator, dataService: mapDataService, locationProvider: self.locationProvider, didFinishModuleFlow: { [weak self] in
             self?.applicationCoordinator.popModule()
         })
     }

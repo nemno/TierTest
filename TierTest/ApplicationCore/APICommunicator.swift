@@ -1,6 +1,6 @@
 //
 //  APICommunicator.swift
-//  KHTest
+//  TierTest
 //
 
 import Foundation

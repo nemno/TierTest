@@ -1,6 +1,6 @@
 //
 //  ApplicationCoordinator.swift
-//  KHTest
+//  TierTest
 //
 
 import UIKit

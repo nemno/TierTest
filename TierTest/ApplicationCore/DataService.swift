@@ -1,9 +1,7 @@
 //
 //  DataService.swift
-//  KHTest
+//  TierTest
 //
-
-import Foundation
 
 protocol DataService {
     var apiCommunicator: APICommunicator { get }
