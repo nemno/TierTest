@@ -11,7 +11,7 @@ enum Endpoint: String {
 }
 
 protocol APICommunicator {
-    func request(method: HTTPMethod, endpoint: Endpoint, completion: @escaping (([String: Any]?, Error?) -> Void))
+    func request(method: HTTPMethod, endpoint: Endpoint, completion: @escaping ((Data?, Error?) -> Void))
 }
 
 final class DefaultAPICommunicator: APICommunicator {
@@ -24,7 +24,7 @@ final class DefaultAPICommunicator: APICommunicator {
     }
     
     // MARK: - Protocol methods
-    func request(method: HTTPMethod, endpoint: Endpoint, completion: @escaping (([String: Any]?, Error?) -> Void)) {
+    func request(method: HTTPMethod, endpoint: Endpoint, completion: @escaping ((Data?, Error?) -> Void)) {
         guard let url = URL(string: self.APIURL + endpoint.rawValue) else {
             completion(nil, TierError.wrongURLFormatError)
             return
@@ -40,11 +40,7 @@ final class DefaultAPICommunicator: APICommunicator {
             .validate()
             .responseString(completionHandler: { response in
                 if let data = response.data {
-                    if let json = try? JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] {
-                        completion(json, nil)
-                    } else {
-                        completion(nil, TierError.responseSerializationError)
-                    }
+                    completion(data, nil)
                 } else {
                     completion(nil, response.error)
                 }
