@@ -4,7 +4,6 @@
 //
 
 import UIKit
-import Alamofire
 import SnapKit
 
 protocol Coordinator {
@@ -32,16 +31,6 @@ final class ApplicationCoordinator: NSObject, Coordinator, UINavigationControlle
     
     init(rootViewController: UIViewController) {
         self.rootViewController = rootViewController
-        
-        let reachabilityManager = NetworkReachabilityManager()
-        reachabilityManager?.startListening(onUpdatePerforming: { status in
-            if status == .notReachable {
-                print("\n==========\n❌ NO INTERNET CONNECTION\n==========\n")
-//                self?.showNoConnectionAlert()
-            } else {
-//                self?.hideNoConnectionAlert()
-            }
-        })
     }
     
     // MARK: - Protocol methods

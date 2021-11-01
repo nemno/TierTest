@@ -17,7 +17,8 @@ final class ScooterAnnotationView: MKMarkerAnnotationView {
 
     override func prepareForDisplay() {
         super.prepareForDisplay()
-        displayPriority = .defaultLow
-        markerTintColor = .cyan
+        displayPriority = .defaultHigh
+        markerTintColor = UIColor.DefaultTheme.mainColor
+        glyphImage = #imageLiteral(resourceName: "scooterAnnotationIcon")
     }
 }

@@ -2,8 +2,6 @@
 //  TierTestUITests.swift
 //  TierTestUITests
 //
-//  Created by Norbert Nemes on 2021. 10. 30..
-//
 
 import XCTest
 

@@ -20,6 +20,8 @@ final class ScooterClusterAnnotationView: MKAnnotationView {
     override func prepareForDisplay() {
         super.prepareForDisplay()
         
+        displayPriority = .defaultLow
+
         if let cluster = annotation as? MKClusterAnnotation {
             let totalScooters = cluster.memberAnnotations.count
             
@@ -31,9 +33,11 @@ final class ScooterClusterAnnotationView: MKAnnotationView {
             numberLabel.textAlignment = .center
             numberLabel.backgroundColor = .white
             numberLabel.text = String(totalScooters)
-            numberLabel.textColor = .black
+            numberLabel.textColor = Constants.textColor
             numberLabel.layer.cornerRadius = markerSize / 2.0
             numberLabel.layer.masksToBounds = true
+            numberLabel.layer.borderWidth = Constants.borderWidth
+            numberLabel.layer.borderColor = Constants.borderColor.cgColor
             self.addSubview(numberLabel)
             numberLabel.snp.makeConstraints { make in
                 make.centerX.equalToSuperview()
@@ -42,5 +46,13 @@ final class ScooterClusterAnnotationView: MKAnnotationView {
                 make.height.equalTo(markerSize)
             }
         }
+    }
+}
+
+private extension ScooterClusterAnnotationView {
+    enum Constants {
+        static let borderWidth: CGFloat = 2.0
+        static let borderColor: UIColor = UIColor.DefaultTheme.mainColor
+        static let textColor: UIColor = UIColor.DefaultTheme.mainColor
     }
 }

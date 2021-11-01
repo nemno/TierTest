@@ -1,0 +1,23 @@
+/* 
+  Localizable.strings
+  TierTest
+*/
+
+// MARK: - COMMON
+
+alertOk="OK";
+alertCancel="Mégse";
+
+// MARK: - ERROR
+
+errorTitle="Hiba történt";
+errorMessage="Sajnos valamilyen hiba történt!";
+
+// MARK: - NO INTERNET
+
+noConnectionTitle="Internet kapcsolat nélkül";
+noConnectionDescription="Nem érzékelhető internet kapcsolat.";
+
+// MARK: - MAP
+
+mapScreenTitle="Rollerek";

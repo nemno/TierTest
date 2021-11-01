@@ -72,6 +72,7 @@ final class MapModule: Module {
     }
     
     private func didFindNearestScooter(scooter: ScooterViewModel) {
-        
+        guard let mapViewController = self.rootViewController as? MapViewController else { return }
+        mapViewController.setNearestScooter(scooter: scooter)
     }
 }

@@ -25,6 +25,15 @@ final class DefaultAPICommunicator: APICommunicator {
     
     // MARK: - Protocol methods
     func request(method: HTTPMethod, endpoint: Endpoint, completion: @escaping ((Data?, Error?) -> Void)) {
+        let reachabilityManager = NetworkReachabilityManager()
+        reachabilityManager?.startListening(onUpdatePerforming: { status in
+            if status == .notReachable {
+                print("\n==========\n❌ NO INTERNET CONNECTION\n==========\n")
+                completion(nil, TierError.noInternetConnection)
+                return
+            }
+        })
+        
         guard let url = URL(string: self.APIURL + endpoint.rawValue) else {
             completion(nil, TierError.wrongURLFormatError)
             return
