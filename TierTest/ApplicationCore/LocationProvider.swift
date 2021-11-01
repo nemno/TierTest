@@ -38,6 +38,11 @@ final class DefaultLocationProvider: NSObject, LocationProvider, CLLocationManag
                         self.locationUpdateCompletions.append(completion)
                     }
         } else {
+            if self.locationManager.authorizationStatus == .denied {
+                completion(nil, TierError.locationPermissionDenied)
+                return
+            }
+            
             self.locationUpdateCompletions.append(completion)
             requestAuthorization()
         }
@@ -63,6 +68,9 @@ final class DefaultLocationProvider: NSObject, LocationProvider, CLLocationManag
     }
         
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        if self.locationManager.authorizationStatus == .notDetermined {
+            return
+        }
         for completion in self.locationUpdateCompletions {
             completion(nil, error)
         }

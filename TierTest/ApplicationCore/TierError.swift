@@ -8,6 +8,7 @@ public enum TierError: Error {
     case noInternetConnection
     case wrongURLFormatError
     case responseSerializationError
+    case locationPermissionDenied
     case unknown
 
     func errorTitle() -> String {

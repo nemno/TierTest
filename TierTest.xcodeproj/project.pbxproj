@@ -12,10 +12,13 @@
 		5A8ABA1F272FE32500AC0114 /* ScooterDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8ABA1E272FE32500AC0114 /* ScooterDetailView.swift */; };
 		5A8ABA25272FF3A700AC0114 /* MKCoordinateRegionExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8ABA24272FF3A700AC0114 /* MKCoordinateRegionExtensions.swift */; };
 		5A8ABA2D27300E6300AC0114 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5A8ABA2C27300E6300AC0114 /* Localizable.strings */; };
+		5A8ABA52273085A100AC0114 /* ConfigProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8ABA51273085A100AC0114 /* ConfigProviderTests.swift */; };
+		5A8ABA5D27308AF400AC0114 /* MapModuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8ABA5C27308AF400AC0114 /* MapModuleTests.swift */; };
+		5A8ABA6227308C4100AC0114 /* MapDataServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8ABA6127308C4100AC0114 /* MapDataServiceTests.swift */; };
+		5A8ABA6F27308D8000AC0114 /* MockMapModuleAPICommunicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8ABA6E27308D8000AC0114 /* MockMapModuleAPICommunicator.swift */; };
 		5AB91E4C272DCC6200E3C20D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB91E4B272DCC6200E3C20D /* AppDelegate.swift */; };
 		5AB91E55272DCC6400E3C20D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AB91E54272DCC6400E3C20D /* Assets.xcassets */; };
 		5AB91E58272DCC6400E3C20D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AB91E56272DCC6400E3C20D /* LaunchScreen.storyboard */; };
-		5AB91E63272DCC6500E3C20D /* TierTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB91E62272DCC6500E3C20D /* TierTestTests.swift */; };
 		5AB91E6E272DCC6500E3C20D /* TierTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB91E6D272DCC6500E3C20D /* TierTestUITests.swift */; };
 		5AB91E97272DD0B900E3C20D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB91E8E272DD0B900E3C20D /* Constants.swift */; };
 		5AB91E98272DD0B900E3C20D /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB91E8F272DD0B900E3C20D /* DataService.swift */; };
@@ -63,13 +66,16 @@
 		5A8ABA1E272FE32500AC0114 /* ScooterDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScooterDetailView.swift; sourceTree = "<group>"; };
 		5A8ABA24272FF3A700AC0114 /* MKCoordinateRegionExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKCoordinateRegionExtensions.swift; sourceTree = "<group>"; };
 		5A8ABA2C27300E6300AC0114 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		5A8ABA51273085A100AC0114 /* ConfigProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigProviderTests.swift; sourceTree = "<group>"; };
+		5A8ABA5C27308AF400AC0114 /* MapModuleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapModuleTests.swift; sourceTree = "<group>"; };
+		5A8ABA6127308C4100AC0114 /* MapDataServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDataServiceTests.swift; sourceTree = "<group>"; };
+		5A8ABA6E27308D8000AC0114 /* MockMapModuleAPICommunicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockMapModuleAPICommunicator.swift; sourceTree = "<group>"; };
 		5AB91E48272DCC6200E3C20D /* TierTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TierTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AB91E4B272DCC6200E3C20D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5AB91E54272DCC6400E3C20D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5AB91E57272DCC6400E3C20D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5AB91E59272DCC6400E3C20D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5AB91E5E272DCC6500E3C20D /* TierTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TierTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5AB91E62272DCC6500E3C20D /* TierTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TierTestTests.swift; sourceTree = "<group>"; };
 		5AB91E64272DCC6500E3C20D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5AB91E69272DCC6500E3C20D /* TierTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TierTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AB91E6D272DCC6500E3C20D /* TierTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TierTestUITests.swift; sourceTree = "<group>"; };
@@ -152,6 +158,40 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		5A8ABA6A27308D0500AC0114 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				5A8ABA51273085A100AC0114 /* ConfigProviderTests.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		5A8ABA6B27308D0E00AC0114 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				5A8ABA6C27308D0E00AC0114 /* Map */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		5A8ABA6C27308D0E00AC0114 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				5A8ABA6D27308D5C00AC0114 /* Mock */,
+				5A8ABA6127308C4100AC0114 /* MapDataServiceTests.swift */,
+				5A8ABA5C27308AF400AC0114 /* MapModuleTests.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		5A8ABA6D27308D5C00AC0114 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				5A8ABA6E27308D8000AC0114 /* MockMapModuleAPICommunicator.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
 		5AB91E3F272DCC6200E3C20D = {
 			isa = PBXGroup;
 			children = (
@@ -191,7 +231,8 @@
 		5AB91E61272DCC6500E3C20D /* TierTestTests */ = {
 			isa = PBXGroup;
 			children = (
-				5AB91E62272DCC6500E3C20D /* TierTestTests.swift */,
+				5A8ABA6A27308D0500AC0114 /* Core */,
+				5A8ABA6B27308D0E00AC0114 /* Modules */,
 				5AB91E64272DCC6500E3C20D /* Info.plist */,
 			);
 			path = TierTestTests;
@@ -568,7 +609,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5AB91E63272DCC6500E3C20D /* TierTestTests.swift in Sources */,
+				5A8ABA6227308C4100AC0114 /* MapDataServiceTests.swift in Sources */,
+				5A8ABA5D27308AF400AC0114 /* MapModuleTests.swift in Sources */,
+				5A8ABA6F27308D8000AC0114 /* MockMapModuleAPICommunicator.swift in Sources */,
+				5A8ABA52273085A100AC0114 /* ConfigProviderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
