@@ -36,15 +36,18 @@ final class MapModule: Module {
     private func getScooters() {
         guard let mapDataService = self.dataService as? MapDataService else { return }
         
+        coordinator.showFullScreenLoading()
         mapDataService.getScooters { [weak self] (response, error) in
             guard let self = self else { return }
             
+            self.coordinator.hideFullScreenLoading()
             if let response = response {
                 let viewModels = self.APIToUIMapper.map(apiModels: response.data.current)
                 self.didFetch(scooters: viewModels)
                 self.getCurrentLocationForNearestScooter(scooters: viewModels)
             } else {
-                // TODO: Handle error
+                let tierError: TierError = (error as? TierError) ?? .unknown
+                self.coordinator.presentPopup(title: tierError.errorTitle(), message: tierError.errorMessage(), okTitle: Constants.errorPopupOKTitle, cancelTitle: nil, okCallback: {}, cancelCallback: nil)
             }
         }
     }
@@ -61,7 +64,8 @@ final class MapModule: Module {
                     self?.didFindNearestScooter(scooter: nearestScooter)
                 }
             } else {
-                // TODO: Handle error
+                let tierError: TierError = (error as? TierError) ?? .unknown
+                self?.coordinator.presentPopup(title: tierError.errorTitle(), message: tierError.errorMessage(), okTitle: Constants.errorPopupOKTitle, cancelTitle: nil, okCallback: {}, cancelCallback: nil)
             }
         }
     }
@@ -74,5 +78,13 @@ final class MapModule: Module {
     private func didFindNearestScooter(scooter: ScooterViewModel) {
         guard let mapViewController = self.rootViewController as? MapViewController else { return }
         mapViewController.setNearestScooter(scooter: scooter)
+    }
+}
+
+// MARK: - Constants
+
+private extension MapModule {
+    enum Constants {
+        static let errorPopupOKTitle = NSLocalizedString("alertOk", comment: "alertOk")
     }
 }
