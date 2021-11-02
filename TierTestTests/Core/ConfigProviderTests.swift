@@ -29,7 +29,7 @@ final class ConfigProviderTests: XCTestCase {
         let apiKey = sut?.APIKey()
         
         // Then
-        XCTAssert(config == .dev)
+        XCTAssert(config == .staging)
         XCTAssert(apiURL == "https://api.jsonbin.io/b/5fa8ff8dbd01877eecdb898f")
         XCTAssert(apiKey == "$2b$10$VE0tRqquld4OBl7LDeo9v.afsyRXFlXcQzmj1KpEB6K1wG2okzQcK")
     }

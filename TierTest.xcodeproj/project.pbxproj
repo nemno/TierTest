@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1BEA248503D7C985CF9C5DD2 /* Pods_TierTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7800C3386A6CE58318D9E146 /* Pods_TierTest.framework */; };
 		30435D68FBA748AFAD651580 /* Pods_TierTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F68C91545E4BB45F5B0EDDD7 /* Pods_TierTestTests.framework */; };
+		5A5690D72731D44500EFF561 /* ScootersAPIToUIMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5690D62731D44500EFF561 /* ScootersAPIToUIMapperTests.swift */; };
+		5A5690DD2731D9E400EFF561 /* MockFailingMapModuleAPICommunicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5690DC2731D9E400EFF561 /* MockFailingMapModuleAPICommunicator.swift */; };
 		5A7164C42731A83500CDF488 /* ConfigDev.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5A7164C32731A83500CDF488 /* ConfigDev.plist */; };
 		5A7164CE2731AB6400CDF488 /* ConfigProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB91EC5272DD6EF00E3C20D /* ConfigProvider.swift */; };
 		5A7164CF2731AB6400CDF488 /* TierError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB91ECD272DD8F000E3C20D /* TierError.swift */; };
@@ -42,7 +44,6 @@
 		5A8ABA25272FF3A700AC0114 /* MKCoordinateRegionExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8ABA24272FF3A700AC0114 /* MKCoordinateRegionExtensions.swift */; };
 		5A8ABA2D27300E6300AC0114 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5A8ABA2C27300E6300AC0114 /* Localizable.strings */; };
 		5A8ABA52273085A100AC0114 /* ConfigProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8ABA51273085A100AC0114 /* ConfigProviderTests.swift */; };
-		5A8ABA5D27308AF400AC0114 /* MapModuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8ABA5C27308AF400AC0114 /* MapModuleTests.swift */; };
 		5A8ABA6227308C4100AC0114 /* MapDataServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8ABA6127308C4100AC0114 /* MapDataServiceTests.swift */; };
 		5A8ABA6F27308D8000AC0114 /* MockMapModuleAPICommunicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8ABA6E27308D8000AC0114 /* MockMapModuleAPICommunicator.swift */; };
 		5AB91E4C272DCC6200E3C20D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB91E4B272DCC6200E3C20D /* AppDelegate.swift */; };
@@ -92,6 +93,8 @@
 /* Begin PBXFileReference section */
 		4594DB6660BF92C1E7F442CC /* Pods_TierTest_TierTestUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TierTest_TierTestUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B78ED668F6044AC7C386101 /* Pods-TierTestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TierTestTests.release.xcconfig"; path = "Target Support Files/Pods-TierTestTests/Pods-TierTestTests.release.xcconfig"; sourceTree = "<group>"; };
+		5A5690D62731D44500EFF561 /* ScootersAPIToUIMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScootersAPIToUIMapperTests.swift; sourceTree = "<group>"; };
+		5A5690DC2731D9E400EFF561 /* MockFailingMapModuleAPICommunicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFailingMapModuleAPICommunicator.swift; sourceTree = "<group>"; };
 		5A7164C32731A83500CDF488 /* ConfigDev.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ConfigDev.plist; sourceTree = "<group>"; };
 		5A7164F02731AB6400CDF488 /* TierTestDev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TierTestDev.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A7164F12731AB6500CDF488 /* TierTest copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "TierTest copy-Info.plist"; path = "/Users/norbertnemes/Documents/Work/TierTest/TierTest copy-Info.plist"; sourceTree = "<absolute>"; };
@@ -99,7 +102,6 @@
 		5A8ABA24272FF3A700AC0114 /* MKCoordinateRegionExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKCoordinateRegionExtensions.swift; sourceTree = "<group>"; };
 		5A8ABA2C27300E6300AC0114 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		5A8ABA51273085A100AC0114 /* ConfigProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigProviderTests.swift; sourceTree = "<group>"; };
-		5A8ABA5C27308AF400AC0114 /* MapModuleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapModuleTests.swift; sourceTree = "<group>"; };
 		5A8ABA6127308C4100AC0114 /* MapDataServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDataServiceTests.swift; sourceTree = "<group>"; };
 		5A8ABA6E27308D8000AC0114 /* MockMapModuleAPICommunicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockMapModuleAPICommunicator.swift; sourceTree = "<group>"; };
 		5AB91E48272DCC6200E3C20D /* TierTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TierTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -219,7 +221,7 @@
 			children = (
 				5A8ABA6D27308D5C00AC0114 /* Mock */,
 				5A8ABA6127308C4100AC0114 /* MapDataServiceTests.swift */,
-				5A8ABA5C27308AF400AC0114 /* MapModuleTests.swift */,
+				5A5690D62731D44500EFF561 /* ScootersAPIToUIMapperTests.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -228,6 +230,7 @@
 			isa = PBXGroup;
 			children = (
 				5A8ABA6E27308D8000AC0114 /* MockMapModuleAPICommunicator.swift */,
+				5A5690DC2731D9E400EFF561 /* MockFailingMapModuleAPICommunicator.swift */,
 			);
 			path = Mock;
 			sourceTree = "<group>";
@@ -754,7 +757,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A8ABA6227308C4100AC0114 /* MapDataServiceTests.swift in Sources */,
-				5A8ABA5D27308AF400AC0114 /* MapModuleTests.swift in Sources */,
+				5A5690D72731D44500EFF561 /* ScootersAPIToUIMapperTests.swift in Sources */,
+				5A5690DD2731D9E400EFF561 /* MockFailingMapModuleAPICommunicator.swift in Sources */,
 				5A8ABA6F27308D8000AC0114 /* MockMapModuleAPICommunicator.swift in Sources */,
 				5A8ABA52273085A100AC0114 /* ConfigProviderTests.swift in Sources */,
 			);
