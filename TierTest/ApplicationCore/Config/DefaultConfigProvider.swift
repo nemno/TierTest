@@ -13,11 +13,15 @@ final class DefaultConfigProvider: ConfigProvider {
         var propertyListFormat =  PropertyListSerialization.PropertyListFormat.xml
         var plistXML: Data?
 
-        self.buildConfig = .dev
 
         if let devPath = Bundle.main.path(forResource: "Config", ofType: "plist") {
+            self.buildConfig = .staging
+            plistXML = FileManager.default.contents(atPath: devPath)
+        } else if let devPath = Bundle.main.path(forResource: "ConfigDev", ofType: "plist") {
+            self.buildConfig = .dev
             plistXML = FileManager.default.contents(atPath: devPath)
         } else {
+            self.buildConfig = .unknown
             assertionFailure("no config plist found!")
             return
         }

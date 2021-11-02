@@ -5,6 +5,8 @@
 
 enum BuildConfig {
     case dev
+    case staging
+    case unknown
 }
 
 protocol ConfigProvider {
